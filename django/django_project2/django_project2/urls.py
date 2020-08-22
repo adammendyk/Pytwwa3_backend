@@ -25,5 +25,6 @@ urlpatterns = [
     path('tasks-db/', include('tasks_db.urls')),
     path('api/', include('api.urls')),
     path('forms/', include('forms.urls')),
-    path('views/', include('class_based_views.urls'))
+    path('views/', include('class_based_views.urls')),
+    path('crud/', include('crud.urls'))
 ]

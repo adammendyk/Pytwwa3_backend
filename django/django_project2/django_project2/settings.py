@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'tasks_db',
     'api',
     'forms',
+    'crud',
     'class_based_views',
     'django.contrib.admin',
     'django.contrib.auth',

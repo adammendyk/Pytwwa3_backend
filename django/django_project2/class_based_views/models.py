@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 
 # Create your models here.
 class Person(models.Model):
@@ -9,3 +9,6 @@ class Person(models.Model):
 
     def __str__(self):
         return f"{self.full_name} z {self.city} ({self.age})"
+
+    def get_absolute_url(self):
+        return reverse('views:hello')

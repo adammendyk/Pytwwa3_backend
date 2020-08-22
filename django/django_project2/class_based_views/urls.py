@@ -12,5 +12,7 @@ urlpatterns = [
     path('person2/<int:id>', views.PersonView.as_view(), name='person_detail2'),
     path('person3/<int:pk>', views.PersonDetailView.as_view(), name='person_detail3'),
 
-    path('create', views.create_person, name='create_person')
+    path('create', views.create_person, name='create_person'),
+    path('create2', views.PersonCreate.as_view(), name='create_person2'),
+    path('create3', views.PersonCreateView.as_view(), name='create_person3'),
 ]

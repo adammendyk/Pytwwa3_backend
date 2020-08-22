@@ -4,6 +4,7 @@ from django.shortcuts import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.views import View
 from django.views.generic import DetailView
+from django.views.generic.edit import CreateView
 from django.core.exceptions import ObjectDoesNotExist
 
 
@@ -39,7 +40,7 @@ class PersonView(View):
         })
 
 
-# Generic view
+# Generic view - DetailView
 class PersonDetailView(DetailView):
     model = Person
 
@@ -59,6 +60,7 @@ def create_person(request):
         return HttpResponse("ok")
 
 
+# Class-based view
 class PersonCreate(View):
     def get(self, request):
         form = PersonForm()
@@ -72,3 +74,9 @@ class PersonCreate(View):
             form.save()
 
         return HttpResponse("ok")
+
+
+# Generic view - CreateView
+class PersonCreateView(CreateView):
+    model = Person
+    fields = '__all__'

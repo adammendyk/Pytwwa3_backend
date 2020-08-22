@@ -6,6 +6,7 @@ class Message(models.Model):
 
     name = models.CharField(max_length=100)
     email = models.EmailField()
+    priority = models.IntegerField()
     category = models.CharField(
         max_length=10,
         choices=[
@@ -22,3 +23,10 @@ class Message(models.Model):
 
     def get_absolute_url(self):
         return reverse('crud:message-list')
+
+    def is_valid_message(self):
+        return self.priority > 0 and self.priority <= 10 and self.body
+
+    def increase_priority(self):
+        if self.priority < 10:
+            self.priority += 1

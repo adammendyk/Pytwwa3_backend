@@ -5,6 +5,7 @@ from crispy_forms.layout import Layout, Submit
 
 from .models import Message
 
+
 class ContactForm(forms.Form):
     name = forms.CharField(label="Imię")
     email = forms.EmailField(label="Email")
@@ -32,12 +33,11 @@ class MessageForm(forms.ModelForm):
             "body": "Treść"
         }
 
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.helper = FormHelper()
-        self.helper.form_method='post'
+        self.helper.form_method = 'post'
 
         self.helper.layout = Layout(
             'name',

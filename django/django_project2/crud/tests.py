@@ -32,7 +32,7 @@ class MessageTestCase(TestCase):
             body = "Lorem ipsum lorem",
         )
 
-    ### Testowanie modelu
+    ### Testowanie modelu znajdującego się na serwerze
 
     def test_create_object(self):
         length = len(Message.objects.all())

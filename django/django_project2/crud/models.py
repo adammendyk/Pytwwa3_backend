@@ -30,3 +30,6 @@ class Message(models.Model):
     def increase_priority(self):
         if self.priority < 10:
             self.priority += 1
+
+    def set_priority(self, priority):
+        self.priority = priority
